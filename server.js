@@ -14,11 +14,11 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({
-  origin: "http://localhost:5173", // your React app URL
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization", "userId"],
-}));
+// app.use(cors({
+//   origin: "http://localhost:5173", // your React app URL
+//   methods: ["GET", "POST", "PUT", "DELETE"],
+//   allowedHeaders: ["Content-Type", "Authorization", "userId"],
+// }));
 
 
 
