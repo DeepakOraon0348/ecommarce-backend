@@ -31,9 +31,11 @@ async function ConnectedToMongoDB() {
         mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/ecom", {
           useNewUrlParser: true,
           useUnifiedTopology: true
-        });
-        isConnected = true;
-        console.log("MongoDB connection successful"); 
+        }).then(() => {
+            isConnected = true;
+            console.log("MongoDB connection successful"); 
+        })
+        
     } catch (error) {
         console.error("MongoDB connection error:", error);
     }
