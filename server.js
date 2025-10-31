@@ -41,9 +41,9 @@ async function ConnectedToMongoDB() {
 }
  
 
-app.use((req, res, next) => {
+app.use(async (req, res, next)=>{
     if(!isConnected){
-        ConnectedToMongoDB();
+        await ConnectedToMongoDB();
     }
     next();
 })
@@ -58,4 +58,4 @@ app.use("/api/orders", orderRouters);
 // const PORT = process.env.PORT || 5000;
 // app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
 
-module.exports = app;
+emport default app;
