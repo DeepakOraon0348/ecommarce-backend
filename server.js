@@ -47,6 +47,9 @@ app.use(async (req, res, next)=>{
     }
     next();
 })
+app.get("/", (req, res) => {
+  res.send("API IS RUNING!");
+});
 // Routes
  
 app.use("/api/products", productRoutes);
@@ -58,4 +61,4 @@ app.use("/api/orders", orderRouters);
 // const PORT = process.env.PORT || 5000;
 // app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
 
-emport default app;
+export default app;
