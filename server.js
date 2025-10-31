@@ -28,7 +28,7 @@ app.use(express.json());
 let isConnected = false;
 async function ConnectedToMongoDB() {
     try {
-        mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/ecom", {
+        mongoose.connect(process.env.MONGO_URI , {
           useNewUrlParser: true,
           useUnifiedTopology: true
         }).then(() => {
@@ -60,7 +60,7 @@ app.use("/api/checkout", checkoutRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/orders", orderRouters);
 
-// const PORT = process.env.PORT || 5000;
-// app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
 
-export default app;
+// export default app;
