@@ -14,6 +14,7 @@ dotenv.config();
 
 const app = express();
 
+
 // app.use(cors({
 //   origin: "http://localhost:5173", // your React app URL
 //   methods: ["GET", "POST", "PUT", "DELETE"],
@@ -60,7 +61,7 @@ app.use("/api/checkout", checkoutRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/orders", orderRouters);
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
 
-// export default app;
+export default app;
